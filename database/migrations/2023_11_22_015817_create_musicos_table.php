@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('frequencia');
             $table->timestamps();
 
-            // $table->foreign('emprestimo_id')->references('id')->on('emprestimos');
         });
     }
 

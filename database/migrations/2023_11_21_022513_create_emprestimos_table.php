@@ -16,9 +16,6 @@ return new class extends Migration
             $table->date('dataEmprestimo');
             $table->date('dataDevolucao');
             $table->timestamps();
-
-            // $table->foreign('instrumento_id')->references('id')->on('instrumentos');
-            // $table->foreign('musico_id')->references('id')->on('musicos');
         });
     }
 

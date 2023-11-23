@@ -11,17 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eventos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
-            $table->time('horario');
-            $table->date('data');
-            $table->string('local');
-            $table->text('descricao');
+        Schema::table('emprestimos', function (Blueprint $table) {
             $table->unsignedBigInteger('musico_id'); 
             $table->unsignedBigInteger('instrumento_id');
-            $table->timestamps();
-
+        
             $table->foreign('musico_id')->references('id')->on('musicos');
             $table->foreign('instrumento_id')->references('id')->on('instrumentos');
         });
@@ -32,6 +25,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eventos');
+        Schema::table('emprestimos', function (Blueprint $table) {
+            //
+        });
     }
 };
