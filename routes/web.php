@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Eventos;
+use App\Http\Controllers\Instrumentos;
+use App\Http\Controllers\Musicos;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/teste', function () {
-    return view('teste');
+    return view('landing');
 });
 
 Route::get('/dashboard', function () {
@@ -31,4 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::resource('/eventos', Eventos::class)->names('eventos');;
+Route::resource('/musicos', Musicos::class)->names('musicos');
+Route::resource('/instrumentos', Instrumentos::class)->names('instrumentos');
 require __DIR__.'/auth.php';

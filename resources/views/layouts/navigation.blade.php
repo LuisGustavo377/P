@@ -15,16 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Início') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('musicians')">
+                    <x-nav-link :href="route('musicos.index')" :active="request()->routeIs('musicos.*')">
                         {{ __('Músicos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('instruments')">
+                    <x-nav-link :href="route('instrumentos.index')" :active="request()->routeIs('instrumentos.*')">
                         {{ __('Instrumentos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('events')">
+                    <x-nav-link :href="route('eventos.index')" :active="request()->routeIs('eventos.*')">
                         {{ __('Eventos') }}
                     </x-nav-link>
                 </div>
+
 
             </div>
 

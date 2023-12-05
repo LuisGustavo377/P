@@ -44,10 +44,18 @@
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
             <nav id="navbar" class="navbar">
-    <ul class="flex">
-        <li><a class="nav-link scrollto " href="{{ route('login') }}">Login</a></li>
-        <li><a class="nav-link scrollto " href="{{ route('register') }}">Registrar</a></li>
-        {{-- <li class="nav-item">
+                <ul class="flex">
+                    @guest
+                        <li><a class="nav-link scrollto " href="{{ route('login') }}">Login</a></li>
+                        <li><a class="nav-link scrollto " href="{{ route('register') }}">Registrar</a></li>
+                        <li><a class="nav-link scrollto" href="#contact" class="nav-link">Contato</a></li>
+                    @endguest
+
+                    @auth
+                        <li><a class="nav-link scrollto" href="{{ route('dashboard') }}" class="nav-link">Início</a></li>
+                    @endauth
+
+                    {{-- <li class="nav-item">
             @if (Route::has('login'))
                 <div class="z-10 flex items-center p-6 text-right sm:fixed sm:top-0 sm:right-0">
                     @auth
@@ -66,10 +74,10 @@
                 </div>
             @endif
         </li> --}}
-        <li><a class="nav-link scrollto" href="#contact" class="nav-link">Contato</a></li>
-    </ul>
-    <i class="bi bi-list mobile-nav-toggle"></i>
-</nav><!-- .navbar -->
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
 
 
 
@@ -229,8 +237,7 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/musico3.jpg" class="testimonial-img"
-                                    alt="">
+                                <img src="assets/img/musico3.jpg" class="testimonial-img" alt="">
                                 <h3>Dimas</h3>
                                 <h4>CEO &amp; Bombardino</h4>
                                 <p>
@@ -243,13 +250,12 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/musico1.jpg" class="testimonial-img"
-                                    alt="">
+                                <img src="assets/img/musico1.jpg" class="testimonial-img" alt="">
                                 <h3>Emerson</h3>
                                 <h4>Souzafone</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                   "Vivam intensamente o momento!"
+                                    "Vivam intensamente o momento!"
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -257,13 +263,12 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/musico2.jpg" class="testimonial-img"
-                                    alt="">
+                                <img src="assets/img/musico2.jpg" class="testimonial-img" alt="">
                                 <h3>Lucas Joaquim</h3>
                                 <h4>Trombone</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                   "A música toca a alma e o coração!"
+                                    "A música toca a alma e o coração!"
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -271,8 +276,7 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/musico4.jpg" class="testimonial-img"
-                                    alt="">
+                                <img src="assets/img/musico4.jpg" class="testimonial-img" alt="">
                                 <h3>Ana Paula</h3>
                                 <h4>Clarinete</h4>
                                 <p>
@@ -285,8 +289,7 @@
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <img src="assets/img/musico5.jpg" class="testimonial-img"
-                                    alt="">
+                                <img src="assets/img/musico5.jpg" class="testimonial-img" alt="">
                                 <h3>Tainara</h3>
                                 <h4>Clarinete</h4>
                                 <p>
