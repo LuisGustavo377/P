@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 
     <title>{{ config('app.name', 'C.M.M.A') }}</title>
 
@@ -17,7 +18,13 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Principal CSS do Bootstrap -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
+    
+    <!-- Estilos customizados para esse template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="blog.css" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -37,8 +44,26 @@
 
         <!-- Page Content -->
         <main>
-            {{ $slot }}
-        </main>
+            <div class="container-fluid">
+                <div class="row">
+
+                    @if (session('msg'))
+                        <p class="msg">{{ session('msg') }}</p>
+                    @endif
+
+                    @yield('content')
+
+                </div>
+            </div>
+        
+        <footer class="pt-3">
+            <div class="py-3 text-white bg-danger">
+                <div class="container">
+                    <p class="mb-0">Projeto C.M.M.A &copy; 2023</p>
+                </div>
+            </div>
+        </footer>
+        
     </div>
 </body>
 

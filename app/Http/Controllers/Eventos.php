@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Evento;
 
 class Eventos extends Controller
 {
@@ -11,7 +13,12 @@ class Eventos extends Controller
      */
     public function index()
     {
-        //
+        $userId = Auth::id(); // Obtém o ID do usuário atualmente autenticado
+
+
+        $listaEventos = Evento::all();
+
+        return view('eventos.index', compact('listaEventos'));
     }
 
     /**
@@ -19,7 +26,7 @@ class Eventos extends Controller
      */
     public function create()
     {
-        //
+        return view('eventos.create');
     }
 
     /**
@@ -27,7 +34,7 @@ class Eventos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('/');
     }
 
     /**
@@ -35,7 +42,7 @@ class Eventos extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('eventos.show');
     }
 
     /**

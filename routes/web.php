@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 });
+Route::get('/teste', function () {
+    return view('teste');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,3 +40,4 @@ Route::resource('/eventos', Eventos::class)->names('eventos');;
 Route::resource('/musicos', Musicos::class)->names('musicos');
 Route::resource('/instrumentos', Instrumentos::class)->names('instrumentos');
 require __DIR__.'/auth.php';
+

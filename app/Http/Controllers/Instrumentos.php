@@ -11,7 +11,7 @@ class Instrumentos extends Controller
      */
     public function index()
     {
-        //
+        return view('instrumentos.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class Instrumentos extends Controller
      */
     public function create()
     {
-        //
+        return view('instrumentos.create');
     }
 
     /**
