@@ -40,32 +40,32 @@ class Eventos extends Controller
             if (auth()->check()) {
                 $user_id = auth()->id(); // Recupera o ID do usuário da sessão
 
-            DB::beginTransaction();
+                DB::beginTransaction();
 
-            // Atualizando os campos necessários       
+                // Atualizando os campos necessários       
 
-            $evento = new Evento();
+                $evento = new Evento();
 
-            $evento->nome = $request->nome;
-            $evento->horario = $request->horario;
-            $evento->data = $request->data;
-            $evento->local = $request->local;
-            $evento->descricao = $request->descricao;
-           
-            // $evento->user_id = auth()->id(); // Preencha automaticamente os campos user_id e estabelecimento_id
+                $evento->nome = $request->nome;
+                $evento->horario = $request->horario;
+                $evento->data = $request->data;
+                $evento->local = $request->local;
+                $evento->descricao = $request->descricao;
 
-
-            $evento->save();
+                // $evento->user_id = auth()->id(); // Preencha automaticamente os campos user_id e estabelecimento_id
 
 
-            // Aqui, você pode fazer outras operações relacionadas ao cliente,
-            // como atualizar relacionamentos ou outras tabelas, se necessário.
+                $evento->save();
 
-            // Se todas as operações foram concluídas com sucesso, faça o commit da transação.
-            DB::commit();
 
-            return redirect()->route('eventos.index')->with('msg', 'Evento criado com sucesso!');
-            }  
+                // Aqui, você pode fazer outras operações relacionadas ao cliente,
+                // como atualizar relacionamentos ou outras tabelas, se necessário.
+
+                // Se todas as operações foram concluídas com sucesso, faça o commit da transação.
+                DB::commit();
+
+                return redirect()->route('eventos.index')->with('msg', 'Evento criado com sucesso!');
+            }
         } catch (\Exception $e) {
             // Em caso de erro, reverta a transação e lance a exceção novamente.
             DB::rollback();
@@ -78,9 +78,9 @@ class Eventos extends Controller
      */
     public function show(string $id)
     {
-       
+
         $evento = Evento::findOrFail($id);
-       
+
         return view('eventos.show', compact('evento'));
     }
 
@@ -89,19 +89,47 @@ class Eventos extends Controller
      */
     public function edit(string $id)
     {
-        
+
         $evento = Evento::findOrFail($id);
-       
+
         return view('eventos.edit', compact('evento'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Evento $evento)
     {
-        //
+        try {
+            DB::beginTransaction();
+    
+            // Recuperando o evento pelo ID
+            $evento = Evento::findOrFail($evento->id);
+    
+            if (!$evento) {
+                throw new \Exception('Evento não encontrado');
+            }
+    
+            // Atualizando os campos necessários       
+            $evento->nome = $request->nome;
+            $evento->horario = $request->horario;
+            $evento->data = $request->data;
+            $evento->local = $request->local;
+            $evento->descricao = $request->descricao;
+    
+            $evento->save();
+    
+            // Se todas as operações foram concluídas com sucesso, faça o commit da transação.
+            DB::commit();
+    
+            return redirect()->route('eventos.index')->with('msg', 'Evento alterado com sucesso!');
+        } catch (\Exception $e) {
+            // Em caso de erro, reverta a transação e lance a exceção novamente.
+            DB::rollback();
+            throw $e;
+        }
     }
+    
 
     /**
      * Remove the specified resource from storage.
