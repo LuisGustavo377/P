@@ -60,7 +60,7 @@
 
             <div class="text-right form-group">
                 <a href="/instrumentos" class="btn btn-secondary">Voltar</a>
-               <a href="{{ url('instrumento/' . $instrumento->id . '/edit') }}" class="text-white bg-red-500 rounded btn btn-danger">Editar Instrumento</a>
+               <a href="{{ url('instrumentos/' . $instrumento->id . '/edit') }}" class="text-white bg-red-500 rounded btn btn-danger">Editar Instrumento</a>
             </div>
             <br>
 

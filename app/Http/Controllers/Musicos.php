@@ -46,7 +46,13 @@ class Musicos extends Controller
                 $musico = new Musico();
 
                 $musico->nome = $request->nome;
-               
+                $musico->dataNascimento = $request->dataNascimento;
+                $musico->endereco = $request->endereco;
+                $musico->email = $request->email;
+                $musico->dataRegistro = $request->dataRegistro;
+                $musico->frequencia = $request->frequencia;
+
+
                 // $evento->user_id = auth()->id(); // Preencha automaticamente os campos user_id e estabelecimento_id
 
 
@@ -95,22 +101,27 @@ class Musicos extends Controller
     {
         try {
             DB::beginTransaction();
-    
+
             // Recuperando o evento pelo ID
             $musico = Musico::findOrFail($musico->id);
-    
+
             if (!$musico) {
                 throw new \Exception('Evento não encontrado');
             }
-    
+
             // Atualizando os campos necessários       
             $musico->nome = $request->nome;
-            
+            $musico->dataNascimento = $request->dataNascimento;
+            $musico->endereco = $request->endereco;
+            $musico->email = $request->email;
+            $musico->dataRegistro = $request->dataRegistro;
+            $musico->frequencia = $request->frequencia;
+
             $musico->save();
-    
+
             // Se todas as operações foram concluídas com sucesso, faça o commit da transação.
             DB::commit();
-    
+
             return redirect()->route('musicos.index')->with('msg', 'Músico alterado com sucesso!');
         } catch (\Exception $e) {
             // Em caso de erro, reverta a transação e lance a exceção novamente.

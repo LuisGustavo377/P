@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('musicos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->date('dataNascimeto');
+            $table->date('dataNascimento');
             $table->string('endereco');
             $table->string('email');
             $table->date('dataRegistro');
