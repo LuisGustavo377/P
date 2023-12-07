@@ -14,6 +14,7 @@
                     <th class="px-3 py-2">Marca</th>
                     <th class="px-3 py-2">Modelo</th>
                     <th class="px-3 py-2">Condição</th>
+                    <th class="px-3 py-2">Músico Responsável</th>
                     <th class="px-3 py-2">Ações</th>
                     <th class="px-3 py-2">
                         <button class="flex items-center justify-center w-full px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
@@ -33,6 +34,7 @@
                     <td class="px-3 py-2">{{ $instrumento->marca }}</td>
                     <td class="px-3 py-2">{{ $instrumento->modelo }}</td>
                     <td class="px-3 py-2">{{ $instrumento->condicao }}</td>
+                    <td class="px-3 py-2">{{ $instrumento->musicoResponsavel }}</td>
                     <td class="px-3 py-2">
                         <div class="flex items-center space-x-2 text-sm">
                         <a href="{{ url('instrumentos/' . $instrumento->id) }}">

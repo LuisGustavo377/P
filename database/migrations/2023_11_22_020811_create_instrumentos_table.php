@@ -19,7 +19,8 @@ return new class extends Migration
             $table->date('dataAquisicao');
             $table->date('dataUltimoReparo');
             $table->string('condicao');
-            $table->string('musicoResponsavel');
+            $table->string('musicoResponsavel')->nullable()->default('Sem Responsável');
+        
             $table->timestamps();
         });
     }
