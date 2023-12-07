@@ -2,6 +2,8 @@
 
 @section('title', 'Editar Instrumentos')
 
-@section ('content')  
+@section('content')
+
+    
 
 @endsection

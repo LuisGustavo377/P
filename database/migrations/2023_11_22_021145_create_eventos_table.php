@@ -18,12 +18,12 @@ return new class extends Migration
             $table->date('data');
             $table->string('local');
             $table->text('descricao');
-            $table->unsignedBigInteger('musico_id'); 
-            $table->unsignedBigInteger('instrumento_id');
+            // $table->unsignedBigInteger('musico_id'); 
+            // $table->unsignedBigInteger('instrumento_id');
             $table->timestamps();
 
-            $table->foreign('musico_id')->references('id')->on('musicos');
-            $table->foreign('instrumento_id')->references('id')->on('instrumentos');
+            // $table->foreign('musico_id')->references('id')->on('musicos');
+            // $table->foreign('instrumento_id')->references('id')->on('instrumentos');
         });
     }
 

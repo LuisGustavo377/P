@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instrumento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Instrumentos extends Controller
 {
@@ -11,7 +13,11 @@ class Instrumentos extends Controller
      */
     public function index()
     {
-        return view('instrumentos.index');
+        $userId = Auth::id(); // Obtém o ID do usuário atualmente autenticado
+
+
+        $instrumentos = Instrumento::all();
+        return view('instrumentos.index', compact('instrumentos'));
     }
 
     /**

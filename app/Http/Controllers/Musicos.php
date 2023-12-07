@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Musico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Musicos extends Controller
 {
@@ -11,7 +13,11 @@ class Musicos extends Controller
      */
     public function index()
     {
-        return view('musicos.index');
+        $userId = Auth::id(); // Obtém o ID do usuário atualmente autenticado
+
+
+        $musicos = Musico::all();
+        return view('musicos.index', compact('musicos'));
     }
 
     /**
