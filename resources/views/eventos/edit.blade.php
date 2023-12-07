@@ -33,13 +33,6 @@
                 <input value="{{ $evento->local }}" type="text" id="local" class="border border-black rounded form-control" name="local" placeholder="Local do Evento" required>
             </div>
 
-            <div class="mb-4 form-group">
-                <label for="title">Evento Privado?</label>
-                <select name="private" id="private" class="border border-black form-control" required>
-                    <option value="0">Não</option>
-                    <option value="1">Sim</option>
-                </select>
-            </div>
 
             <div class="mb-4 form-group">
                 <label for="description">Descrição do Evento:</label>
@@ -48,7 +41,7 @@
 
             <div class="text-right form-group">
                 <a href="/eventos" class="btn btn-secondary">Voltar</a>
-                <input href="/eventos" type="submit" class="text-white bg-red-500 btn " value="Salvar Alterações">
+                <input type="submit" class="text-white bg-red-500 btn btn-danger " value="Salvar Alterações">
             </div>
             <br>
         </div>
