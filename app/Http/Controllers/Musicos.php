@@ -11,7 +11,7 @@ class Musicos extends Controller
      */
     public function index()
     {
-        return view('instrumentos.index');
+        return view('musicos.index');
     }
 
     /**

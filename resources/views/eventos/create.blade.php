@@ -27,7 +27,7 @@
             </div>
 
             <div class="mb-4 form-group">
-                <label for="city">Cidade:</label>
+                <label for="city">Local:</label>
                 <input type="text" id="city" class="form-control" name="city" placeholder="Local do Evento"
                     required>
             </div>
@@ -50,7 +50,7 @@
                 <a href="/eventos" class="btn btn-secondary">Voltar</a>
                 <input type="submit" class="btn btn-danger" value="Criar Evento">
             </div>
-            
+            <br>
         </form>
     </div>
 @endsection
