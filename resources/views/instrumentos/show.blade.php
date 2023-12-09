@@ -1,6 +1,6 @@
 @extends ('layouts.main')
 
-@section('title', 'Instrumentos')
+@section('title', 'Instrumento')
 
 @section('content')
 
@@ -54,8 +54,8 @@
 
             <div class="mb-4 form-group">
                 <label for="condicao">Condição</label>
-                <textarea name="condicao" value="{{ $instrumento->condicao }}" id="condicao" class="border border-black rounded form-control"
-                    placeholder="Descreva as condições de uso." required></textarea>
+                <input name="condicao" value="{{ $instrumento->condicao }}" id="condicao" class="border border-black rounded form-control"
+                    placeholder="Descreva as condições de uso." required>
             </div>
 
             <div class="text-right form-group">
