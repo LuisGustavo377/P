@@ -5,28 +5,27 @@
 @section('content')
 
 
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
+<div class="w-full overflow-hidden rounded-lg shadow-xs">
         <div class="w-full max-w-full overflow-x-auto overflow-y-auto">
             <br>
             <table class="w-full mx-auto border border-collapse border-gray-300 rounded-md">
                 <thead>
-                    <tr
-                        class="text-sm font-semibold tracking-wide text-left text-white uppercase bg-red-500 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800">
-                        <th class="px-3 py-2">Nome</th>
-                        <th class="px-3 py-2">Email</th>
-                        <th class="px-3 py-2">Frequência</th>
-                        <th class="px-3 py-2">Data Registro</th>
-                        <th class="px-3 py-2">Ações</th>
-                        <th class="px-3 py-2">
-                            <button
-                                class="flex items-center justify-center w-full px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-                                <a href="{{ url('musicos/create') }}">
-                                    Cadastrar Músico
-                                    <span class="ml-2" aria-hidden="true">+</span>
-                                </a>
-                            </button>
-                        </th>
-                    </tr>
+                <tr class="text-sm font-semibold tracking-wide text-left text-white uppercase bg-red-500 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800">
+        <th class="px-3 py-2 bg-red-500">Nome</th>
+        <th class="px-3 py-2 bg-red-500">Email</th>
+        <th class="px-3 py-2 bg-red-500">Frequência</th>
+        <th class="px-3 py-2 bg-red-500">Data Registro</th>
+        <th class="px-3 py-2 bg-red-500">Ações</th>
+        <th class="px-3 py-2 bg-red-500">
+            <button
+                class="flex items-center justify-center w-full px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                <a href="{{ url('musicos/create') }}">
+                    Cadastrar Músico
+                    <span class="ml-2 bg-white-500" aria-hidden="true">+</span>
+                </a>
+            </button>
+        </th>
+    </tr>
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                     {{-- Iterar sobre eventos --}}

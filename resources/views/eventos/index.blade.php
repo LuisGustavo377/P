@@ -10,13 +10,13 @@
         <table class="w-full mx-auto border border-collapse border-gray-300 rounded-md">
             <thead>
                 <tr class="text-sm font-semibold tracking-wide text-left text-white uppercase bg-red-500 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800">
-                    <th class="px-3 py-2">Nome</th>
-                    <th class="px-3 py-2">Horário</th>
-                    <th class="px-3 py-2">Data</th>
-                    <th class="px-3 py-2">Local</th>
-                    <th class="px-3 py-2">Ações</th>
-                    <th class="px-3 py-2">
-                        <button class="flex items-center justify-center w-full px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                    <th class="px-3 py-2 bg-red-500">Nome</th>
+                    <th class="px-3 py-2 bg-red-500">Horário</th>
+                    <th class="px-3 py-2 bg-red-500">Data</th>
+                    <th class="px-3 py-2 bg-red-500">Local</th>
+                    <th class="px-3 py-2 bg-red-500">Ações</th>
+                    <th class="px-3 py-2 bg-red-500">
+                        <button class="flex items-center justify-center w-full px-2 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                             <a href="{{ url('eventos/create') }}">
                                 Cadastrar Evento
                                 <span class="ml-2" aria-hidden="true">+</span>
